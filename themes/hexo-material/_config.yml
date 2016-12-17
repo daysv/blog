@@ -1,0 +1,141 @@
+# ---------------------------------------------------------------
+# Site Information Settings
+# ---------------------------------------------------------------
+
+# Head info
+head:
+    favicon: "/img/1.png"
+    high_res_favicon: "/img/1.png"
+    apple_touch_icon: "/img/1.png"
+    keywords: blog fontend node node-webkit days_v sang
+
+# Jump Links Settings
+url:
+    rss: 
+    daily_pic: "#"
+    logo: 
+
+
+# ---------------------------------------------------------------
+# Style Settings
+# ---------------------------------------------------------------
+
+# Schemes
+scheme: Paradox
+#scheme: Isolation
+
+# UI & UX: slogan, color, effect
+uiux:
+    slogan: "Code is poetry"
+    theme_color: "#0097A7"
+    theme_sub_color: "#00838F"
+    hyperlink_color: "#00838F"
+    button_color: "#757575"
+    android_chrome_color: "#0097A7"
+    nprogress_color: "#FF4081"
+    nprogress_buffer: "800"
+    
+# JS Effect Switches
+js_effect:
+    fade: true
+    smoothscroll: true
+
+# Reading experience
+# markdown available value:
+#     Material | Github | Plain
+reading:
+    markdown: Github
+    entry_excerpt: 80
+    code_highlight: monokai-sublime
+
+# Thumbnail Settings
+thumbnail:
+    purecolor: 
+    random_amount: 8
+
+# Background Settings
+# bing available parameter:
+#     new | color= | type=
+#         color available value: black, blue, brown, green, multi, orange, pink, purple, red, white, yellow
+#         type available value: A (animal), C (culture), N (nature), S (space), T (travel)
+background:
+    purecolor: "#F5F5F5"
+    # bgimg: "/img/bg.png"
+    bing: 
+        enable: false
+        parameter:  
+
+# Images Settings
+img:
+    logo: "/img/logo1.jpg"
+    avatar: "/img/user.png"
+    daily_pic: "/img/daily_pic.png"
+    sidebar_header: "/img/sidebar_header.png"
+    footerico: "/img/footer/footer_ico-"
+    #upyun_logo: "/img/upyun_logo.png"
+    random_thumbnail: "/img/random/"
+
+# Custom Fonts
+fonts: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif
+
+# ---------------------------------------------------------------
+# Menu Settings
+# ---------------------------------------------------------------
+
+# SNS Menu
+sns:
+    email: days_v@qq.com
+    twitter: 
+    facebook: 
+    googleplus: 
+    github: "https://github.com/daysv"
+    weibo: "https://www.weibo.com/315336507"
+    instagram: 
+    tumblr: 
+
+
+# Sidebar User Dropdown
+dropdown: 
+    Email Me: 
+        link: "mailto:days_v@qq.com"
+        icon: email
+
+# Pages Menu
+pages:
+    #about: "/about"
+    Github: "https://github.com/daysv"
+
+
+# ---------------------------------------------------------------
+# Integrated Services
+# ---------------------------------------------------------------
+    
+# Comment Systems
+# Available value:
+#     duoshuo | disqus
+comment:
+    use: "duoshuo"
+    shortname: "sangblog"
+    duoshuo_thread_key: 72c2b42b1f344e3649f13ef4236b8bec
+    duoshuo_embed_js_url: "https://static.duoshuo.com/embed.js"
+
+# Search Systems
+# Available value:
+#     swiftype | google | local
+search:
+    use: google
+    swiftype_key: 
+        
+# Leancloud Views
+leancloud:
+    enable: true
+    app_id: VPHu4nA0dHAxex7oLULGtWBI-gzGzoHsz
+    app_key: UrmQphRDLJzPOsE8yBbRXXtT
+    av_core_mini: "https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"
+    
+# Busuanzi 不蒜子 Views
+busuanzi:
+    enable: false
+    all_site_uv: false
+    post_pv: false
+    busuanzi_pure_mini_js: "https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"
