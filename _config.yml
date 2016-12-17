@@ -70,8 +70,10 @@ theme: hexo-material
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo:
-    github: https://github.com/daysv/daysv.github.io.git
+  repo: https://github.com/daysv/daysv.github.io.git
+  name: daysv
+  email: days_v@qq.com
+  ignore_hidden: false # default is true
 
 neat_html:
   enable: true

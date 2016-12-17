@@ -58,7 +58,7 @@ nmake -f ms\ntdll.mak install
 ### options 1
 
 1. 下载[sqlcipher srouce](https://github.com/sqlcipher/sqlcipher) - 3.4.0 并解压
-2. 将编译好OpenSSL目录内的 lib\libeay32.lib 和 bin\libeay32.dll 复制到sqlcipher文件夹
+2. 将编译好OpenSSL目录内的 **'lib'** 和 **'bin'** 目录内的内容（ssleay32.dll libeay32.dll ssleay32.lib libeay32.lib 等） 复制到 sqlcipher 目录 
 3. 运行 **'C:\MinGW\msys\1.0\msys.bat进入sqlcipher'** 目录 (cd c:\sqlcipher-master)
 4. 运行
 ```bash
