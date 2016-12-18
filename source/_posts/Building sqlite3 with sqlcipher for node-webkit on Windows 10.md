@@ -103,7 +103,7 @@ make dll
             '-llibeay32.lib',
             '-lssleay32.lib',
           ],
-          'lirary_dirs': [
+          'library_dirs': [
             '<(SHARED_INTERMEDIATE_DIR)/sqlite-autoconf-<@(sqlite_version)/OpenSSL-Win32'
           ]
         }
