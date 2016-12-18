@@ -143,7 +143,7 @@ make dll
 ### options 1
 回到 **'$(PROJECT)\node_modules\sqlite3'** 执行 `npm install --build-from-source --runtime=node-webkit --target_arch=ia32 --target=0.11.0`
 
-### options2
+### options 2
 下载编译好的 [sqlite3-sqlcipher](http://7lrzuu.com1.z0.glb.clouddn.com/sqlite3-sqlcipher.7z)
 
 ## node-webkit测试
