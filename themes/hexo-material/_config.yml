@@ -148,7 +148,7 @@ search:
 
 # Leancloud Views
 leancloud:
-    enable: true
+    enable: false
     app_id: VPHu4nA0dHAxex7oLULGtWBI-gzGzoHsz
     app_key: UrmQphRDLJzPOsE8yBbRXXtT
     av_core_mini: "https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"
