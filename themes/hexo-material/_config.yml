@@ -11,9 +11,9 @@ head:
 
 # Jump Links Settings
 url:
-    rss: 
+    rss:
     daily_pic: "#"
-    logo: 
+    logo: "#"
 
 
 # ---------------------------------------------------------------
@@ -34,7 +34,7 @@ uiux:
     android_chrome_color: "#0097A7"
     nprogress_color: "#FF4081"
     nprogress_buffer: "800"
-    
+
 # JS Effect Switches
 js_effect:
     fade: true
@@ -50,8 +50,8 @@ reading:
 
 # Thumbnail Settings
 thumbnail:
-    purecolor: 
-    random_amount: 8
+    purecolor:
+    random_amount: 22
 
 # Background Settings
 # bing available parameter:
@@ -61,9 +61,9 @@ thumbnail:
 background:
     purecolor: "#F5F5F5"
     # bgimg: "/img/bg.png"
-    bing: 
+    bing:
         enable: false
-        parameter:  
+        parameter:
 
 # Images Settings
 img:
@@ -73,7 +73,7 @@ img:
     sidebar_header: "/img/sidebar_header.png"
     footerico: "/img/footer/footer_ico-"
     #upyun_logo: "/img/upyun_logo.png"
-    random_thumbnail: "/img/random/"
+    random_thumbnail: "/img/random/material-"
 
 # Custom Fonts
 fonts: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif
@@ -85,38 +85,58 @@ fonts: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "
 # SNS Menu
 sns:
     email: days_v@qq.com
-    twitter: 
-    facebook: 
-    googleplus: 
-    github: "https://github.com/daysv"
+    facebook:
+    twitter:
+    googleplus:
     weibo: "https://www.weibo.com/315336507"
-    instagram: 
-    tumblr: 
+    instagram:
+    tumblr:
+    github: "https://github.com/daysv"
+    linkedin:
+    zhihu:
+    bilibili:
+    telegram:
 
+# SNS Share Switch
+sns_share:
+    twitter: true
+    facebook: true
+    googleplus: true
+    weibo: true
+    linkedin: false
+    qq: false
+    telegram: false
 
 # Sidebar User Dropdown
-dropdown: 
-    Email Me: 
+dropdown:
+    Email Me:
         link: "mailto:days_v@qq.com"
         icon: email
 
+# Sidebar Categories Switch
+sidebar_categories: false
+
 # Pages Menu
 pages:
-    #about: "/about"
     Github: "https://github.com/daysv"
+    #About:
+        #link: "/about"
+        #icon: person
 
+# Qrcode for redirect at other device
+qrcode: false
 
 # ---------------------------------------------------------------
 # Integrated Services
 # ---------------------------------------------------------------
-    
+
 # Comment Systems
-# Available value:
+# Available value of "use":
 #     duoshuo | disqus
 comment:
-    use: "duoshuo"
-    shortname: "sangblog"
-    duoshuo_thread_key: 72c2b42b1f344e3649f13ef4236b8bec
+    use: "disqus"
+    shortname: "daysv"
+    duoshuo_thread_key_type: path
     duoshuo_embed_js_url: "https://static.duoshuo.com/embed.js"
 
 # Search Systems
@@ -124,15 +144,15 @@ comment:
 #     swiftype | google | local
 search:
     use: google
-    swiftype_key: 
-        
+    swiftype_key:
+
 # Leancloud Views
 leancloud:
     enable: true
     app_id: VPHu4nA0dHAxex7oLULGtWBI-gzGzoHsz
     app_key: UrmQphRDLJzPOsE8yBbRXXtT
     av_core_mini: "https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"
-    
+
 # Busuanzi 不蒜子 Views
 busuanzi:
     enable: false
