@@ -18,7 +18,6 @@ AnguarJS 已经有方式来排除一些不需要的部分(如ngSwitch, ngSwitchW
 在编译阶段删除并获取`delete confirmation`元素,然后在需要的时候进行注入
 
 ```html
-<!doctype html>
 <html ng-app="Demo" ng-controller="AppController">
 <head>
     <meta charset="utf-8"/>
@@ -62,7 +61,7 @@ AnguarJS 已经有方式来排除一些不需要的部分(如ngSwitch, ngSwitchW
         app.controller(
                 "AppController",
                 function ($scope) {
-                    // 构建friends大对象.
+                    /* 构建friends大对象. */
                     $scope.friends = buildFriends(1000);
 
                     $scope.showConfirmation = function (friend) {
@@ -73,10 +72,6 @@ AnguarJS 已经有方式来排除一些不需要的部分(如ngSwitch, ngSwitchW
                     $scope.hideConfirmation = function (friend) {
                         friend.isShowingConfirmation = false;
                     };
-
-                    // ---
-                    // PRIVATE METHODS.
-                    // ---
 
                     function buildFriends(count) {
                         var names = ["Sarah", "Joanna", "Tricia"];
@@ -94,38 +89,37 @@ AnguarJS 已经有方式来排除一些不需要的部分(如ngSwitch, ngSwitchW
                 }
         );
 
-        // -------------------------------------------------- //
-        // -------------------------------------------------- //
-
-        // 帮助渲染DOM树
-        // 可以延迟一部分不常用的DOM树链接
+        /* 帮助渲染DOM树
+            可以延迟一部分不常用的DOM树链接
+        */
         app.directive(
                 "bnList",
                 function ($compile) {
-                    // 编译DOM模板
+                    /* 编译DOM模板 */
                     function compile(tElement, tAttributes) {
-                        // 当模板准备就绪,希望获取到不常用的deleteConfirmation元素
+                        /* 当模板准备就绪,希望获取到不常用的deleteConfirmation元素 */
                         var tOverlay = tElement.find("div.deleteConfirmation")
                                         .remove()
                                 ;
-                        // 现在我们提取到并需要分别编译以至能分别transcluded链接
+                        /* 现在我们提取到并需要分别编译以至能分别transcluded链接 */
                         var transcludeOverlay = $compile(tOverlay);
-                        // 在scope中绑定UI
+                        /* 在scope中绑定UI */
                         function link($scope, element, attributes) {
 
-                            // 这个demo中,当用户点击删除按钮时候,需要触发删除确认.
-                            // 当用户点击starts时,我们能注入删除确认元素
+                            /* 这个demo中,当用户点击删除按钮时候,需要触发删除确认.
+                                当用户点击starts时,我们能注入删除确认元素
+                            */
                             element.on(
                                     "mousedown",
                                     "li a.delete",
                                     function (event) {
                                         var item = $(this).closest("li");
                                         var localScope = item.scope();
-                                        // 判断是否已经注入
+                                        /* 判断是否已经注入 */
                                         if (localScope.hasOwnProperty("__injected")) {
                                             return;
                                         }
-                                        // 为删除确认执行Transclude和链接DOM树
+                                        /* 为删除确认执行Transclude和链接DOM树 */
                                         transcludeOverlay(
                                                 localScope,
                                                 function (overlayClone, $scope) {
@@ -133,7 +127,7 @@ AnguarJS 已经有方式来排除一些不需要的部分(如ngSwitch, ngSwitchW
                                                     $scope.__injected = true;
                                                 }
                                         );
-                                        // 触发$apply 刷新界面
+                                        /* 触发$apply 刷新界面 */
                                         localScope.$apply();
 
                                     }

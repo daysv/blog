@@ -11,7 +11,7 @@ tags: [angular.js]
 
 稍微看看`Angular.js`相关源码
 
-```js
+```javascript
 
       $digest: function() {
         var watch, value, last,
@@ -151,7 +151,7 @@ angular.module('Scroll', [])
                 var scrollTop, index;
                 scope.first = 0;
                 scope.last = 30;
-                // 监听滚动事件动态限制渲染
+                /* 监听滚动事件动态限制渲染 */
                 element.on('scroll', function () {
                     scrollTop = element[0].scrollTop;
                     index = scrollTop / 20;
@@ -168,7 +168,6 @@ angular.module('Scroll', [])
 
 ```html
 
-<!DOCTYPE html>
 <html ng-app="Scroll">
 <head lang="en">
     <meta charset="UTF-8">
@@ -218,7 +217,7 @@ github中已有相似库 https://github.com/kamilkp/angular-vs-repeat 能够快�
 ## 在React中的简单实现
 在React内通过几行代码就可以轻松实现渲染所需列表数据
 
-```js
+```jsx
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 

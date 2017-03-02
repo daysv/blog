@@ -12,8 +12,6 @@ tags: [angular.js]
 我设计了一个渲染1000条数据的列表用于实验.我们打算绑定`mouseenter`事件同时输出鼠标进入的元素.第一个版本中,我们在父节点中绑定一个简单的指令为每个列表元素使用事件代理.第二个版本中,我们为每个元素绑定指令
 
 ```html
-
-<!doctype html>
 <html ng-app="Demo" ng-controller="AppController" bn-window-teaser>
 <head>
     <meta charset="utf-8"/>
@@ -33,11 +31,7 @@ tags: [angular.js]
     <h2>
         Event Delegation Performance
     </h2>
-
-    <!--
-    In this approach, we're going to have a single "mouseenter" event handler
-    delegated to the UL directive.
-    -->
+ 
     <ul bn-friends class="friends">
         <li ng-repeat="friend in friends track by friend.id" class="friend">
             {{ friend.name }}
@@ -49,20 +43,13 @@ tags: [angular.js]
     <script type="text/javascript" src="../../vendor/jquery/jquery-2.1.0.min.js"></script>
     <script type="text/javascript" src="../../vendor/angularjs/angular-1.3.6.min.js"></script>
     <script type="text/javascript">
-
-        // Create an application module for our demo.
+ 
         var app = angular.module("Demo", []);
-        
-        // -------------------------------------------------- //
-        // -------------------------------------------------- //
-
-        // I control the root of the application.
+  
         app.controller(
                 "AppController",
                 function ($scope) {
-                    $scope.friends = [];
-                    // Build up a large collection of friends so we can see how performance
-                    // is affected at scale (basically the only time performance matters).
+                    $scope.friends = []; 
                     for (var i = 1; i <= 1000; i++) {
                         $scope.friends.push({
                             id: i,
@@ -70,25 +57,17 @@ tags: [angular.js]
                         });
                     }
                 }
-        );
+        ); 
         
-        // -------------------------------------------------- //
-        // -------------------------------------------------- //
-
-        // I provide a directive for the entire list, handling the "mouseenter" event
-        // at the common parent element.
         app.directive(
                 "bnFriends",
-                function () {
-                    // Return the directive configuration.
+                function () { 
                     return ({
                         link: link,
                         restrict: "A"
                     });
-                    
-                    // I bind the JavaScript events to the scope.
-                    function link($scope, element, attributes) {
-                        // Listen for "mouseenter" events on the descendant LI elements.
+                     
+                    function link($scope, element, attributes) { 
                         element.on(
                                 "mouseenter",
                                 "li.friend",
@@ -117,7 +96,6 @@ tags: [angular.js]
 
 ```html
 
-<!doctype html>
 <html ng-app="Demo" ng-controller="AppController" bn-window-teaser>
 <head>
     <meta charset="utf-8" />
@@ -138,10 +116,7 @@ tags: [angular.js]
         Linking Performance
     </h2>
 
-    <!--
-    In this approach, we're going to link a directive for each friend in the
-    list, allowing each node to listen for its own mouse events.
-    -->
+
     <ul class="friends">
         <li ng-repeat="friend in friends track by friend.id" bn-friend class="friend">
             {{ friend.name }}
@@ -153,20 +128,14 @@ tags: [angular.js]
     <script type="text/javascript" src="../../vendor/jquery/jquery-2.1.0.min.js"></script>
     <script type="text/javascript" src="../../vendor/angularjs/angular-1.3.6.min.js"></script>
     <script type="text/javascript">
-
-        // Create an application module for our demo.
+ 
         var app = angular.module( "Demo", [] );
-        
-        // -------------------------------------------------- //
-        // -------------------------------------------------- //
-        
-        // I control the root of the application.
+          
         app.controller(
                 "AppController",
                 function( $scope ) {
                     $scope.friends = [];
-                    // Build up a large collection of friends so we can see how performance
-                    // is affected at scale (basically the only time performance matters).
+                    
                     for ( var i = 1 ; i <= 1000 ; i++ ) {
                         $scope.friends.push({
                             id: i,
@@ -176,23 +145,15 @@ tags: [angular.js]
                 }
         );
 
-        // -------------------------------------------------- //
-        // -------------------------------------------------- //
-
-        // I provide a directive for each element in the list, handling the "mousenter"
-        // event at the individual child level.
         app.directive(
                 "bnFriend",
                 function() {
-                    // Return the directive configuration.
                     return({
                         link: link,
                         restrict: "A"
                     });
                     
-                    // I bind the JavaScript events to the scope.
                     function link( $scope, element, attributes ) {
-                        // Listen for the "mouseenter" event on the current node.
                         element.on(
                                 "mouseenter",
                                 function handleMouseEnter( event ) {

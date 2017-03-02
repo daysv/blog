@@ -7,56 +7,56 @@ Moodle是一个开源课程管理系统（CMS），也被称为学习管理系�
 
 <!-- more -->
 
-#懒人安装模式
+# 懒人安装模式
 
 基于阿里云`Ubuntu 14.04`系统  
 
 更新源
-
+```bash
 	sudo apt-get update
 	sudo apt-get upgrade
-
+```
 安装`nginx`  `php5-fpm`及扩展
-
+```bash
 	sudo apt-get install nginx php5-fpm
 	sudo apt-get install php5-curl
 	sudo apt-get install php5-mysql
-
+```
 配置`nginx`
-
+```bash
 	sudo vi /etc/nginx/sites-available/default
-
+```
 修改为以下内容
-
+```bash
 	root /www/php; //配置根目录
-
+```
 及
-
+```bash
 	location ~ \.php$ {
 		fastcgi_pass unix:/var/run/php5-fpm.sock;  
 		fastcgi_index index.php;  
 		include fastcgi_params;  
 	}  
-
+```
 开启 或 重载`nginx`
-
+```bash
 	service nginx start
 	service nginx reload
-
+```
 安装`mysql`
-
+```bash
 	sudo apt-get install mysql-server
-
+```
 安装`moodle`
-	
+```bash
 	cd /www/php
 	wget download.moodle.org/download.php/direct/stable27/moodle-latest-27.tgz
 	tar -zxvf moodle-latest-27.tgz
 	mkdir moodle
-
+```
 接下来就可以通过公网ip访问配置`moodle`
 
-###问题1
+### 问题1
 >Parent directory (/www/php) is not writeable. Data directory (/www/php/moodledata) cannot be created by the installer.  
 
 [社区回答](http://stackoverflow.com/questions/18749927/error-installing-moodle-dataroot-location-is-not-secure-and-parent-)  
@@ -65,14 +65,14 @@ Moodle是一个开源课程管理系统（CMS），也被称为学习管理系�
 	sudo chown -R www-data:www-data /www/php/moodledata
 
 
-###问题2
+### 问题2
 >Moodle会尝试将配置存储在您的Moodle根目录中。安装脚本无法自动创建一个包含您设置的config.php文件，极可能是由于Moodle>目录是不能写的。您可以复制如下的代码到Moodle根目录下的config.php文件中。
 
-
+```bash
 	vi /www/php/mododle/config.php
-
+```
 复制
-
+```php
 	<?php  // Moodle configuration file
 
 	unset($CFG);
@@ -102,17 +102,18 @@ Moodle是一个开源课程管理系统（CMS），也被称为学习管理系�
 
 	// There is no php closing tag in this file,
 	// it is intentional because it prevents trailing whitespace problems!
+```
 
-###问题3
+### 问题3
 >![检查服务器](http://daysv.qiniudn.com/o_18v7tklup9441rm51joi1h5u1gp39.jpg)
 
 空缺的扩展逐一安装
-
+```
 	sudo apt-get install php5-gd
 	sudo apt-get install php5-xmlrpc 
 	sudo apt-get install php5-intl
-	
-###问题4
+```
+### 问题4
 当进去后发现css样式似乎不起作用(**这设定略坑**)  
 [官方doc](https://docs.moodle.org/dev/Install_Moodle_On_Ubuntu_with_Nginx/PHP-fpm)
 
@@ -128,14 +129,14 @@ Moodle是一个开源课程管理系统（CMS），也被称为学习管理系�
 
 
 连接mysql
-	
+```sql
 	mysql -u<name> -p<password>
 	show databases;
 	use moodle;
-
+```
 我们可以用sql语句修改下
-
+```sql
 	UPDATE mdl_config set value='0' where name='slasharguments';
-
+```
 大功告成  
 

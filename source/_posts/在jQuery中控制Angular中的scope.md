@@ -13,8 +13,6 @@ tags: [angular.js,jQuery.js]
 下面是简单的例子，通过在外部获取Angular控制器中的域，并执行相关方法。
 
 ```html
-
-<!DOCTYPE html>
 <html lang="en" ng-app="app">
 <head>
     <meta charset="UTF-8">
@@ -32,13 +30,13 @@ tags: [angular.js,jQuery.js]
     </script>
     <script>
         $(document).on('ready', function () {
-            var controllerScope = $('div[ng-controller="listController"]').scope();  // Get controller's scope
-            controllerScope.test(); // log 'test'
-            console.log(controllerScope.list); // log [1,2,3,4,5]
+            var controllerScope = $('div[ng-controller="listController"]').scope();  
+            controllerScope.test();  
+            console.log(controllerScope.list);  
             $('button').click(function (e) {
                 var scope = $(e.target).scope();
-                console.log(scope.item) // log item number
-                scope.test(); // log 'test'
+                console.log(scope.item)  
+                scope.test();  
             })
         })
     </script>

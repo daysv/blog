@@ -6,13 +6,14 @@ tags: [node.js,io.js,angular.js,socket.io]
 运用angular+socketio+express搭建的简单聊天室
 <!-- more -->
 
-#简单Demo
-[在线聊天室](http://schatting.herokuapp.com/)
-[github源代码](https://github.com/daysv/Chat-room)
-<iframe src="http://schat.coding.io/" width="100%" height="720"></iframe>
+# 简单Demo
 
-#代码
-##package.json	
+[github源代码](https://github.com/daysv/Chat-room)
+
+# 部分代码
+## package.json	
+
+```json
 	{
 	 "name": "chat",
 	 "version": "0.0.1",
@@ -30,11 +31,11 @@ tags: [node.js,io.js,angular.js,socket.io]
  	 "author": "days_v",
 	  "license": "MIT"
 	}
+```
 
-
-#web.js
+# web.js
 用express+socket.io搭建websocket服务
-
+```js
 	var express= require('express');
 	var path = require('path');
 	var favicon = require('static-favicon');
@@ -75,10 +76,12 @@ tags: [node.js,io.js,angular.js,socket.io]
 	var port = process.env.PORT || 5000;
 	server.listen(port);
 	console.log('success');
+````
+# index.html
 
-#index.html
 尝试用angularjs+bootstrap构建前端
 
+```html
     <!DOCTYPE html>
     <html>
     <head>
@@ -220,5 +223,7 @@ tags: [node.js,io.js,angular.js,socket.io]
     </script>
     </body>
     </html>
+    
+```
 
 简单的代码就能马上实现聊天室功能,angular与平常与jquery的思维不同,需要提前做好框架减少DOM的操作.

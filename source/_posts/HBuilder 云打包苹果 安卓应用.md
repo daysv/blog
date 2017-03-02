@@ -10,7 +10,7 @@ HBuilder 是一个国人开发的IDE,这是[HBuilder]()的介绍 "HBuilder是当
 
 <!-- more -->
 
-##HBuilder
+## HBuilder
 本着用之前先看文档的原则,就看看[文档](http://ask.dcloud.net.cn/docs)吧
 
 >HTML5过去被称为有“性工能”障碍，即性能不如原生，工具不如原生、功能不如原生。
@@ -27,9 +27,9 @@ HBuilder 是一个国人开发的IDE,这是[HBuilder]()的介绍 "HBuilder是当
 
 看到cnode社区有人通过ionic写了个app,我也尝试写了个用来学习 **[a piece of shit](https://github.com/daysv/MUI-CNode)**,写的过程中发现有些文档写的还是不太清楚
 
-##HTML5plus
+## HTML5plus
 [http://www.html5plus.org/#specification#/specification/Accelerometer.html](http://www.html5plus.org/#specification#/specification/Accelerometer.html)
 
-##MUI
+## MUI
 MUI是个轻量级框架,其中不少直接基于HTML5+
 [http://dcloudio.github.io/mui/](http://dcloudio.github.io/mui/)

@@ -14,7 +14,7 @@ toggleListener方法对事件进行手动绑定及解绑
 可以看出通过对变量 unbindHandler 进行赋值,使得操作unbindHandler对事件进行管理
 其中主要通过 `unbindHandler()` 和 `unbindHandler = null` 进行解绑.
 
-```js
+```html
 <!doctype html>
 <html ng-app="Demo">
 <head>
@@ -61,10 +61,7 @@ toggleListener方法对事件进行手动绑定及解绑
 
     var app = angular.module("Demo", []);
 
-
-    // -------------------------------------------------- //
-    // -------------------------------------------------- //
-
+ 
     app.controller(
             "AppController",
             function ($scope, $interval) {
@@ -78,10 +75,7 @@ toggleListener方法对事件进行手动绑定及解绑
             }
     );
 
-
-    // -------------------------------------------------- //
-    // -------------------------------------------------- //
-
+ 
     app.controller(
             "EventController",
             function ($scope) {
@@ -92,12 +86,7 @@ toggleListener方法对事件进行手动绑定及解绑
                 var unbindHandler = null;
 
                 startWatchingEvent();
-
-
-                // ---
-                // PUBLIC METHODS
-                // ---
-
+ 
                 $scope.toggleListener = function () {
 
                     unbindHandler
@@ -107,10 +96,7 @@ toggleListener方法对事件进行手动绑定及解绑
 
                 };
 
-
-                // ---
-                // PRIVATE METHODS
-                // ---
+ 
 
                 function handlePingEvent(event) {
                     $scope.eventCount++;

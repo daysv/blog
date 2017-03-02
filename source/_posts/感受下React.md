@@ -8,7 +8,7 @@ tags: [react.js]
 <!-- more -->
 
 ## index.js
-```js
+```jsx
     import React, {Component, PropTypes, Perf} from 'react'
     import {VelocityTransitionGroup} from 'velocity-react'
     import css from './styles.css'
@@ -188,7 +188,7 @@ tags: [react.js]
 ```
 
 ## 使用
-```js
+```jsx
 import STree from './index'
 import ReactDOM from 'react-dom'
 import React, {Component, PropTypes} from 'react'
